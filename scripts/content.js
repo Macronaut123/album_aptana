@@ -42,6 +42,12 @@ var album1 = [
 'foto8',
 'foto9'];
 
+var album2 = [
+'foto0',
+'foto1',
+'foto2',
+'foto3'];
+
 var albumList =[
 'album1',
 'album2']

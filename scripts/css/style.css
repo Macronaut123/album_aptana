@@ -45,6 +45,15 @@
 	left: 0px;
 }
 
+.music_list{
+	position: absolute;
+	left: 0%;
+	top: 2%;
+	width:1016px;
+	height: 500px;
+	overflow-y: auto;
+}
+
 #music{
 	cursor: pointer;
 	font-family: "Comic Sans MS";
@@ -66,7 +75,7 @@
 .right_arrow{
 	position: absolute;
 	top: 104%;
-	left: 68%;
+	left: 55%;
 	width: 10%;
 	height: 10%;
 	cursor: pointer;
@@ -75,7 +84,7 @@
 .left_arrow{
 	position: absolute;
 	top: 104%;
-	left: 57%;
+	left: 44%;
 	width: 10%;
 	height: 10%;
 	cursor: pointer;
@@ -98,21 +107,23 @@
 	z-index: 15;
 	border: 2px solid;
 	border-color: #EEEEEE;
-	width: 750px;
+	width: 95px;
 	height: 500px;
-	top: 3%;
+	top: 4%;
 	left: 3%;
-	border-radius: 20px;
-	opacity: 0.75;	
+	opacity: 0.95;	
+	display: none;
+	overflow-y: auto;
 }
 
 #album_choices{
 	margin-left: 10px;
+	margin-top: 10px;
 }
 
 .close_album{
-	margin-top: 2%;
-	margin-left: 95%
+	margin-top: 10%;
+	margin-left: 35%
 }
 
 .photo_slideshow{
@@ -154,8 +165,9 @@
 	padding: 5px;
 	border-radius: 15px;
 	top: 72%;
-	left: 36%;
+	left: 51%;
 	color: #EEEEEE;
+	cursor: pointer;
 }
 
 .photo{
@@ -175,5 +187,9 @@
 	color: #EEEEEE;
 	top: 87%;
 	left: 2%
+}
+
+.photo_display:hover{
+	opacity: 0.5;
 }
 
