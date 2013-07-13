@@ -9,7 +9,7 @@
 	border: 2px solid;
 	border-color: #C884CC;
 	border-radius: 20px;
-	display: block;
+	display: none;
 }
 
 .intro_screen p{
@@ -154,6 +154,3 @@
 	left: 2%
 }
 
-.photo_album{
-	position: absolute;
-}

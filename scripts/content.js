@@ -30,7 +30,7 @@ var musicNames = [
 "What Can I Do",
 "So Young"];
 
-var albumAmor = [
+var album = [
 'foto0',
 'foto1',
 'foto2',
@@ -41,13 +41,6 @@ var albumAmor = [
 'foto7',
 'foto8',
 'foto9'];
-
-var albumAmor2 = [
-'foto0',
-'foto1',
-'foto2',
-'foto3',
-'foto4',];
 
 var poemList=[
 "",

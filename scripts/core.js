@@ -1,6 +1,7 @@
 
 var currentMusic;
 var currentPhoto = 0;
+var currentAlbum = 0;
 
 function initialize(){
 	addSongs();
@@ -10,11 +11,7 @@ function initialize(){
 	if(poemList[currentPhoto] != null && poemList[currentPhoto] != ""){$('.photo_poem').html('"'+poemList[currentPhoto]+'"'); $('.photo_poem').css('display','block');} else if(poemList[currentPhoto] == null || poemList[currentPhoto] == ""){$('.photo_poem').html(''); $('.photo_poem').css('display','none');}
 
 	//console.log(photoNames.length);
-	
-	var currentAlbum = albumAmor2;
-	var currentAlbumName = "albumAmor2"
 }
-
 
 function introRemove(){
 	$('.intro_screen').animate({left:'-100%'},5000,removeAct);
@@ -33,7 +30,7 @@ function addSongs(){
 }
 
 function coverFadeInOut(){
-	$('.photo_cover').fadeIn(2000, function(){ $('.photo_cover').fadeOut(2000); $('.photo').attr('src','images/slideshow/'+currentAlbumName+'/foto'+currentPhoto+'.png'); })
+	$('.photo_cover').fadeIn(2000, function(){ $('.photo_cover').fadeOut(2000); $('.photo').attr('src','images/slideshow/album/foto'+currentPhoto+'.png'); })
 	$('.photo_display').html(currentPhoto);
 	if(poemList[currentPhoto] != null && poemList[currentPhoto] != ""){$('.photo_poem').html('"'+poemList[currentPhoto]+'"'); $('.photo_poem').css('display','block');} else if(poemList[currentPhoto] == null || poemList[currentPhoto] == ""){$('.photo_poem').html(''); $('.photo_poem').css('display','none');}
 }
@@ -41,7 +38,7 @@ function coverFadeInOut(){
 function changePhoto(direction){
 	switch(direction){
 		case "right":
-		if(currentPhoto < (currentAlbum.length-1)){
+		if(currentPhoto < (album.length-1)){
 			currentPhoto++;
 			console.log(currentPhoto);
 			coverFadeInOut();
