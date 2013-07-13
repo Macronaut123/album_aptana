@@ -92,6 +92,29 @@
 	left: 30px;
 }
 
+.album_chooser{
+	position: absolute;
+	background-color: #C884CC;
+	z-index: 15;
+	border: 2px solid;
+	border-color: #EEEEEE;
+	width: 750px;
+	height: 500px;
+	top: 3%;
+	left: 3%;
+	border-radius: 20px;
+	opacity: 0.75;	
+}
+
+#album_choices{
+	margin-left: 10px;
+}
+
+.close_album{
+	margin-top: 2%;
+	margin-left: 95%
+}
+
 .photo_slideshow{
 	position: absolute;
 	height: 540px;

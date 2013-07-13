@@ -1,16 +1,28 @@
 
 var currentMusic;
 var currentPhoto = 0;
-var currentAlbum = 0;
+var currentAlbum;
 
 function initialize(){
+	
 	addSongs();
 	
+	addAlbumChoices();
+	
 	$('.feathers').css('background-color','#A884AA');
+	
+	currentAlbum = album1;
+	currentAlbumName = 'album1';
 	
 	if(poemList[currentPhoto] != null && poemList[currentPhoto] != ""){$('.photo_poem').html('"'+poemList[currentPhoto]+'"'); $('.photo_poem').css('display','block');} else if(poemList[currentPhoto] == null || poemList[currentPhoto] == ""){$('.photo_poem').html(''); $('.photo_poem').css('display','none');}
 
 	//console.log(photoNames.length);
+}
+
+function addAlbumChoices(){
+	for(var i = 0; i < albumList.length; i++){
+		$('.album_chooser').append($('<button id=album_choices>'+albumList[i]+'</button>'));
+	}
 }
 
 function introRemove(){
@@ -30,7 +42,7 @@ function addSongs(){
 }
 
 function coverFadeInOut(){
-	$('.photo_cover').fadeIn(2000, function(){ $('.photo_cover').fadeOut(2000); $('.photo').attr('src','images/slideshow/album/foto'+currentPhoto+'.png'); })
+	$('.photo_cover').fadeIn(2000, function(){ $('.photo_cover').fadeOut(2000); $('.photo').attr('src','images/slideshow/'+currentAlbumName+'/foto'+currentPhoto+'.png'); })
 	$('.photo_display').html(currentPhoto);
 	if(poemList[currentPhoto] != null && poemList[currentPhoto] != ""){$('.photo_poem').html('"'+poemList[currentPhoto]+'"'); $('.photo_poem').css('display','block');} else if(poemList[currentPhoto] == null || poemList[currentPhoto] == ""){$('.photo_poem').html(''); $('.photo_poem').css('display','none');}
 }
@@ -38,7 +50,7 @@ function coverFadeInOut(){
 function changePhoto(direction){
 	switch(direction){
 		case "right":
-		if(currentPhoto < (album.length-1)){
+		if(currentPhoto < (currentAlbum.length-1)){
 			currentPhoto++;
 			console.log(currentPhoto);
 			coverFadeInOut();
@@ -49,6 +61,19 @@ function changePhoto(direction){
 			currentPhoto--;
 			coverFadeInOut();
 		}
+		break;
+	}
+}
+
+function fadeChoice(){
+	$('.album_chooser').fadeOut('slow');
+}
+
+function chooseAlbum(gotoAlbum){
+	switch(gotoAlbum){
+		case 'album1':
+		break;
+		case 'album2':
 		break;
 	}
 }
