@@ -1,0 +1,55 @@
+<!DOCTYPE  html>
+
+<html>
+    <head>    	
+    	<title>Amor</title>
+    	
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    	
+        <!--MAIN IMPORTS-->
+        <script type="application/javascript" src="scripts/jquery.js"></script>                    
+        
+        <!--ADDITIONAL IMPORTS-->
+        <script type="application/javascript" src="scripts/core.js"></script>
+        <script type="application/javascript" src="scripts/content.js"></script>
+        
+        <!--STYLESHEET-->
+        <link rel="stylesheet" href='scripts/css/style.css' type='text/css'/>
+        
+    </head>
+    
+    
+    <body onload="initialize();">
+	    	<div class="intro_screen">
+	    		
+	    		<img src="images/pinkheart.png"  onclick="introRemove();"/>
+	    		
+	    		<p>Versão 0.1</p>
+	    		
+	    	</div>	
+	    	
+	    	<div class='core_screen'>
+	    		
+	    		<h1 class='photo_album'>Album</h1>
+	    		
+	    		<h1 class='photo_display'>0</h1>
+	    		
+	    		<h1 class='photo_poem'>Poeminha</h1>
+	    		
+	    		<div class='photo_cover' onClick="coverFadeOut();"> </div>
+	    		
+	    		<div class='photo_slideshow'>
+	    			
+	    			<img class='photo' src="images/slideshow/albumAmor2/foto0.png"/>
+	    			
+	    			<img class='arrow right_arrow' onClick='changePhoto("right");' src='images/arrow2.png'/>
+	    			<img class='arrow left_arrow' onClick='changePhoto("left");' src='images/arrow2.png'/>
+	    			 
+	    		</div>
+	    		
+	    		<audio class="audio_system" src="sound/feathers.mp3" controls>Audio System</audio>	   
+	    		
+	    	</div>
+    	
+    </body>
+</html>
