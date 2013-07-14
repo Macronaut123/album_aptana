@@ -2,6 +2,7 @@
 var currentMusic;
 var currentPhoto = 0;
 var currentAlbum;
+var chooserStatus = 'CLOSED';
 
 function initialize(){
 	
@@ -13,10 +14,14 @@ function initialize(){
 	
 	currentAlbum = album1;
 	currentAlbumName = 'album1';
+	currentPoemList = poemList1;
 	
 	$('.photo_display').html(currentAlbumName);
+	$('.current_photo_display').html(currentPhoto);
 	
-	if(poemList[currentPhoto] != null && poemList[currentPhoto] != ""){$('.photo_poem').html('"'+poemList[currentPhoto]+'"'); $('.photo_poem').css('display','block');} else if(poemList[currentPhoto] == null || poemList[currentPhoto] == ""){$('.photo_poem').html(''); $('.photo_poem').css('display','none');}
+	console.log(currentPoemList[currentPhoto]);
+	
+	if(currentPoemList[currentPhoto] != null && currentPoemList[currentPhoto] != ""){$('.photo_poem').html('"'+currentPoemList[currentPhoto]+'"'); $('.photo_poem').css('display','block');} else if(currentPoemList[currentPhoto] == null || currentPoemList[currentPhoto] == ""){$('.photo_poem').html(''); $('.photo_poem').css('display','none');}
 
 	//console.log(photoNames.length);
 }
@@ -38,8 +43,8 @@ function addSongs(){
 }
 
 function coverFadeInOut(){
-	$('.photo_cover').fadeIn(2000, function(){ $('.photo_cover').fadeOut(2000); $('.photo').attr('src','images/slideshow/'+currentAlbumName+'/foto'+currentPhoto+'.png'); })
-	if(poemList[currentPhoto] != null && poemList[currentPhoto] != ""){$('.photo_poem').html('"'+poemList[currentPhoto]+'"'); $('.photo_poem').css('display','block');} else if(poemList[currentPhoto] == null || poemList[currentPhoto] == ""){$('.photo_poem').html(''); $('.photo_poem').css('display','none');}
+	$('.photo_cover').fadeIn(2000, function(){ $('.photo_cover').fadeOut(2000); $('.photo').attr('src','images/slideshow/'+currentAlbumName+'/foto'+currentPhoto+'.jpg'); })
+	if(currentPoemList[currentPhoto] != null && currentPoemList[currentPhoto] != ""){$('.photo_poem').html('"'+currentPoemList[currentPhoto]+'"'); $('.photo_poem').css('display','block');} else if(currentPoemList[currentPhoto] == null || currentPoemList[currentPhoto] == ""){$('.photo_poem').html(''); $('.photo_poem').css('display','none');}
 }
 
 function changePhoto(direction){
@@ -49,12 +54,14 @@ function changePhoto(direction){
 			currentPhoto++;
 			console.log(currentPhoto);
 			coverFadeInOut();
+			$('.current_photo_display').html(currentPhoto);
 		}
 		break;
 		case "left":
 		if(currentPhoto > 0){
 			currentPhoto--;
 			coverFadeInOut();
+			$('.current_photo_display').html(currentPhoto);
 		}
 		break;
 	}
@@ -62,6 +69,7 @@ function changePhoto(direction){
 
 function fadeChoice(){
 	$('.album_chooser').fadeOut('slow');
+	chooserStatus = 'CLOSED';
 }
 
 function addAlbumChoices(){
@@ -70,8 +78,18 @@ function addAlbumChoices(){
 	}
 }
 
-function openAlbumChoice(){
-	$('.album_chooser').fadeIn('slow');
+function albumChoiceSystem(){
+	switch(chooserStatus)
+	{
+		case 'OPEN':
+		$('.album_chooser').fadeOut('slow');
+		chooserStatus = 'CLOSED';
+		break;
+		case 'CLOSED':
+		$('.album_chooser').fadeIn('slow');
+		chooserStatus = 'OPEN';
+		break;
+	}
 }
 
 function chooseAlbum(gotoAlbum){
@@ -79,14 +97,22 @@ function chooseAlbum(gotoAlbum){
 		case 'album1':
 		currentAlbumName = gotoAlbum;
 		currentAlbum = album1;
+		currentPhoto = 0;
+		currentPoemList = poemList1;
 		$('.photo_display').html(currentAlbumName);
-		$('.photo_cover').fadeIn(2000, function(){ $('.photo_cover').fadeOut(2000); $('.photo').attr('src','images/slideshow/'+currentAlbumName+'/foto'+currentPhoto+'.png'); })
+		$('.photo_cover').fadeIn(2000, function(){ $('.photo_cover').fadeOut(2000); $('.photo').attr('src','images/slideshow/'+currentAlbumName+'/foto'+currentPhoto+'.jpg'); })
+		$('.current_photo_display').html(currentPhoto);
+		if(currentPoemList[currentPhoto] != null && currentPoemList[currentPhoto] != ""){$('.photo_poem').html('"'+currentPoemList[currentPhoto]+'"'); $('.photo_poem').css('display','block');} else if(currentPoemList[currentPhoto] == null || currentPoemList[currentPhoto] == ""){$('.photo_poem').html(''); $('.photo_poem').css('display','none');}
 		break;
 		case 'album2':
 		currentAlbumName = gotoAlbum;
 		currentAlbum = album2;
+		currentPhoto = 0;
+		currentPoemList = poemList2;
 		$('.photo_display').html(currentAlbumName);
-		$('.photo_cover').fadeIn(2000, function(){ $('.photo_cover').fadeOut(2000); $('.photo').attr('src','images/slideshow/'+currentAlbumName+'/foto'+currentPhoto+'.png'); })
+		$('.photo_cover').fadeIn(2000, function(){ $('.photo_cover').fadeOut(2000); $('.photo').attr('src','images/slideshow/'+currentAlbumName+'/foto'+currentPhoto+'.jpg'); })
+		$('.current_photo_display').html(currentPhoto);
+		if(currentPoemList[currentPhoto] != null && currentPoemList[currentPhoto] != ""){$('.photo_poem').html('"'+currentPoemList[currentPhoto]+'"'); $('.photo_poem').css('display','block');} else if(currentPoemList[currentPhoto] == null || currentPoemList[currentPhoto] == ""){$('.photo_poem').html(''); $('.photo_poem').css('display','none');}
 		break;
 	}
 }

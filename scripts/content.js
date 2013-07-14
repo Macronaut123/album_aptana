@@ -40,20 +40,39 @@ var album1 = [
 'foto6',
 'foto7',
 'foto8',
-'foto9'];
+'foto9',
+'foto10'];
 
 var album2 = [
 'foto0',
 'foto1',
 'foto2',
-'foto3'];
+'foto3',
+'foto4',
+'foto5',
+'foto6',
+'foto7',
+'foto8',
+'foto9',
+'foto10',
+'foto11',
+'foto12',
+'foto13',
+'foto14',
+'foto15',
+'foto16'];
 
 var albumList =[
 'album1',
 'album2']
 
-var poemList=[
+var poemList1=[
 "",
 "Te amo amor da minha vida, amor da minha vida querida, dentre mil jazidas, foi só você que realmente apareceu para mim - Marcos",
 "Se existe amor no mundo, não sabia o que significava, pelo menos não até te conhecer - Marcos"];
+
+var poemList2=[
+"",
+"",
+""];
 
