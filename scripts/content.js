@@ -64,7 +64,7 @@ var album2 = [
 
 var albumList =[
 'album1',
-'album2']
+'album2'];
 
 var poemList1=[
 "",

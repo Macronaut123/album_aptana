@@ -9,7 +9,7 @@
 	border: 2px solid;
 	border-color: #C884CC;
 	border-radius: 20px;
-	display: none;
+	display: block;
 }
 
 .intro_screen p{
@@ -107,7 +107,7 @@
 	z-index: 15;
 	border: 2px solid;
 	border-color: #EEEEEE;
-	width: 80px;
+	width: 93px;
 	height: 500px;
 	top: 4%;
 	left: 74%;
@@ -208,4 +208,12 @@
 	position: absolute;
 	text-align: center;
 	vertical-align: center;
+}
+
+#flor_ilustra{
+	position: absolute;
+	top: 72%;
+	left: 77%;
+	width: 20%;
+	height: auto;
 }
