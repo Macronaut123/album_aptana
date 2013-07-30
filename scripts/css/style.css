@@ -9,7 +9,50 @@
 	border: 2px solid;
 	border-color: #C884CC;
 	border-radius: 20px;
-	display: block;
+	display: none;
+}
+
+.music_albuns{
+	position: absolute;
+	z-index: 10;
+	width: 400px;
+	height: 400px;
+	background-color: #B884BB;
+	border: 2px solid;
+	border-color: #EEEEEE;
+	opacity: 0.95;
+	top: 10%;
+	left: 10%;
+	border-radius: 20px;
+	overflow-y: auto;
+}
+
+#albumlist_choices{
+	margin-top: 5%;
+}
+
+.close_music{
+	margin-left: 85%;
+	margin-top: 5%;
+}
+
+.choose_music{
+	position: absolute;
+	cursor: pointer;
+	background-color: #A884AA;
+	border-radius: 20px;
+	font-family: Arial;
+	font-size: 18px;
+	color: #EEEEEE;
+	font-weight: bold;
+	border: none;
+	padding: 2%;
+	top: 83%;
+	left: 21.5%;
+}
+
+.choose_music:hover{
+	opacity: 0.5;
 }
 
 .intro_screen p{
@@ -47,7 +90,7 @@
 
 .music_list{
 	position: absolute;
-	left: 0%;
+	left: -4%;
 	top: 2%;
 	width:1016px;
 	height: 500px;
@@ -107,7 +150,8 @@
 	z-index: 15;
 	border: 2px solid;
 	border-color: #EEEEEE;
-	width: 93px;
+	border-radius: 2px;
+	width: 77px;
 	height: 500px;
 	top: 4%;
 	left: 74%;
@@ -117,13 +161,13 @@
 }
 
 #album_choices{
-	margin-left: 10px;
+	margin-left: -12px;
 	margin-top: 10px;
 }
 
 .close_album{
 	margin-top: 10%;
-	margin-left: 35%
+	margin-left: 6%;
 }
 
 .photo_slideshow{

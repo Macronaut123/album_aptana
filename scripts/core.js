@@ -10,6 +10,8 @@ function initialize(){
 	
 	addAlbumChoices();
 	
+	addMusicAlbum();
+	
 	$('.feathers').css('background-color','#A884AA');
 	
 	currentAlbum = album1;
@@ -18,10 +20,6 @@ function initialize(){
 	
 	$('.photo_display').html(currentAlbumName);
 	$('.current_photo_display').html(currentPhoto);
-	
-	console.log(currentPoemList[currentPhoto]);
-	
-	if(currentPoemList[currentPhoto] != null && currentPoemList[currentPhoto] != ""){$('.photo_poem').html('"'+currentPoemList[currentPhoto]+'"'); $('.photo_poem').css('display','block');} else if(currentPoemList[currentPhoto] == null || currentPoemList[currentPhoto] == ""){$('.photo_poem').html(''); $('.photo_poem').css('display','none');}
 
 	//console.log(photoNames.length);
 }
@@ -38,13 +36,12 @@ function addSongs(){
 	var musicLength = musicList.length;
 	
 	for(var i = 0; i < musicLength; i++){
-		$('.music_list').append($('<p onClick=setupAudio("'+musicList[i]+'") id="music" class='+musicList[i]+'>'+musicNames[i]+'</p>'));
+		$('.music_list').append($('<li onClick=setupAudio("'+musicList[i]+'") id="music" class='+musicList[i]+'>'+musicNames[i]+'</li>'));
 	}
 }
 
 function coverFadeInOut(){
 	$('.photo_cover').fadeIn(2000, function(){ $('.photo_cover').fadeOut(2000); $('.photo').attr('src','images/slideshow/'+currentAlbumName+'/foto'+currentPhoto+'.jpg'); })
-	if(currentPoemList[currentPhoto] != null && currentPoemList[currentPhoto] != ""){$('.photo_poem').html('"'+currentPoemList[currentPhoto]+'"'); $('.photo_poem').css('display','block');} else if(currentPoemList[currentPhoto] == null || currentPoemList[currentPhoto] == ""){$('.photo_poem').html(''); $('.photo_poem').css('display','none');}
 }
 
 function changePhoto(direction){
@@ -92,6 +89,16 @@ function albumChoiceSystem(){
 	}
 }
 
+function addMusicAlbum(){
+	for (var i = 0; i < albumChoices.length; i++){
+		$('.music_albuns').append($('<button id=albumlist_choices>'+albumChoices[i]+'</button>'));
+	}
+}
+
+function closeMusic(){
+	$('.music_albuns').fadeOut('slow');
+}
+
 function chooseAlbum(gotoAlbum){
 	switch(gotoAlbum){
 		case 'album1':
@@ -102,7 +109,6 @@ function chooseAlbum(gotoAlbum){
 		$('.photo_display').html(currentAlbumName);
 		$('.photo_cover').fadeIn(2000, function(){ $('.photo_cover').fadeOut(2000); $('.photo').attr('src','images/slideshow/'+currentAlbumName+'/foto'+currentPhoto+'.jpg'); })
 		$('.current_photo_display').html(currentPhoto);
-		if(currentPoemList[currentPhoto] != null && currentPoemList[currentPhoto] != ""){$('.photo_poem').html('"'+currentPoemList[currentPhoto]+'"'); $('.photo_poem').css('display','block');} else if(currentPoemList[currentPhoto] == null || currentPoemList[currentPhoto] == ""){$('.photo_poem').html(''); $('.photo_poem').css('display','none');}
 		break;
 		case 'album2':
 		currentAlbumName = gotoAlbum;
@@ -112,7 +118,6 @@ function chooseAlbum(gotoAlbum){
 		$('.photo_display').html(currentAlbumName);
 		$('.photo_cover').fadeIn(2000, function(){ $('.photo_cover').fadeOut(2000); $('.photo').attr('src','images/slideshow/'+currentAlbumName+'/foto'+currentPhoto+'.jpg'); })
 		$('.current_photo_display').html(currentPhoto);
-		if(currentPoemList[currentPhoto] != null && currentPoemList[currentPhoto] != ""){$('.photo_poem').html('"'+currentPoemList[currentPhoto]+'"'); $('.photo_poem').css('display','block');} else if(currentPoemList[currentPhoto] == null || currentPoemList[currentPhoto] == ""){$('.photo_poem').html(''); $('.photo_poem').css('display','none');}
 		break;
 	}
 }
@@ -121,7 +126,7 @@ function setupAudio(songName){
 	currentMusic = songName;
 	
 	$('.audio_system').attr('src','sound/'+songName+'.mp3')
-	$('.core_screen p').css('background-color','#C884CC');
+	$('.core_screen li').css('background-color','#C884CC');
 	$('.'+songName+'').css('background-color','#A884AA');
 }
 

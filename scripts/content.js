@@ -14,6 +14,8 @@ var musicList = [
 "what",
 "young"];
 
+var albumChoices = ["The Corrs", "Black Eyed Peas"];
+
 var musicNames = [
 "Toss the Feathers",
 "Forgiven not Forgotten",
@@ -65,14 +67,4 @@ var album2 = [
 var albumList =[
 'album1',
 'album2'];
-
-var poemList1=[
-"",
-"Te amo amor da minha vida, amor da minha vida querida, dentre mil jazidas, foi só você que realmente apareceu para mim - Marcos",
-"Se existe amor no mundo, não sabia o que significava, pelo menos não até te conhecer - Marcos"];
-
-var poemList2=[
-"",
-"",
-""];
 
