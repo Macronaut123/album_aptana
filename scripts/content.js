@@ -1,4 +1,7 @@
-var musicList = [
+var albumChoices = ["The Corrs", "Black Eyed Peas"];
+var albumNames = ["corrs","eyed"];
+
+var corrs = [
 "feathers",
 "forgiven",
 "frontiers",
@@ -14,9 +17,7 @@ var musicList = [
 "what",
 "young"];
 
-var albumChoices = ["The Corrs", "Black Eyed Peas"];
-
-var musicNames = [
+var corrsNames = [
 "Toss the Feathers",
 "Forgiven not Forgotten",
 "No Frontiers",
@@ -31,6 +32,30 @@ var musicNames = [
 "At Your Side",
 "What Can I Do",
 "So Young"];
+
+var eyed = [
+"dontlie",
+"feeling",
+"humps",
+"mamahey",
+"masquenada",
+"phunk",
+"pow",
+"pumpit",
+"shutup",
+"started"];
+
+var eyedNames = [
+"Dont Lie",
+"I got a Feeling",
+"My Humps",
+"Hey Mama",
+"Mas que Nada",
+"Don't Phunk",
+"Boom Boom Pow",
+"Pump It",
+"Shut Up",
+"Get Started"];
 
 var album1 = [
 'foto0',

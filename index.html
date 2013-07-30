@@ -2,7 +2,7 @@
 
 <html>
     <head>    	
-    	<title>Álbum - 0.3</title>
+    	<title>Álbum - 0.4</title>
     	
     	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     	
@@ -24,7 +24,7 @@
 	    		
 	    		<img src="images/pinkheart.png"  onclick="introRemove();"/>
 	    		
-	    		<p>Versão 0.3</p>
+	    		<p>Versão 0.4</p>
 	    		
 	    	</div>	
 	    	
@@ -42,9 +42,9 @@
 	    		
 	    		<img id='flor_ilustra' src="images/flower.png"/>   
 	    		
-	    		<button class="choose_music">Compositor</button>
+	    		<button class="choose_music" onclick="musicSystem();">Compositor</button>
 	    		
-	    		<ul class="music_albuns"> <button class='close_music' onClick='closeMusic();'>x</button> </ul>
+	    		<ul class="music_albuns"> <button class='close_music' onClick='musicSystem();'>x</button> </ul>
 	    		
 	    		<div class='photo_slideshow'>
 	    			
@@ -55,7 +55,7 @@
 	    			 
 	    		</div>
 	    		
-	    		<audio class="audio_system" src="sound/feathers.mp3" controls>Audio System</audio>	   
+	    		<audio class="audio_system" controls>Audio System</audio>	   
 	    		
 	    	</div>
     	
